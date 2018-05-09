@@ -1,5 +1,6 @@
 <head>
   <title>tempPlayer</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.3.7/plyr.css">
 </head>
 
 <body>
@@ -11,6 +12,7 @@
   <h1>MediaElement</h1>
 
   {{> player}}
+  <script src="https://cdn.plyr.io/3.3.7/plyr.js"></script>
 </body>
 
 <template name="hello">
@@ -28,8 +30,8 @@
   </ul>
 </template>
 
-<template name="player">
-  <div id="script_div">
+<template name="player5">
+  <div class="containerPlayer" id="script_div">
 
   <!-- {{#each sounds}} -->
     <audio id="player" controls>
@@ -37,25 +39,23 @@
       <!-- <source src="http://stream.ktuh.org:8000/stream-mp3" type="audio/ogg"> -->
     </audio>
 
-   <!--  <audio id="audio-player" preload="none" controls>
-      <source src="http://stream.ktuh.org:8000/stream-mp3" type="audio/mp3">
-    </audio> -->
   <!-- {{/each}} -->
   </div>
 
 </template>
 
-<template name="player5">
-<div class="container">
-    {{#each sounds}}
 
-<video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
+<template name="player">
+<div class="containerPlayer" id="script_div">
+  <!-- {{#if tasksLoaded}}
+{{#each sounds}}   -->
+<video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="player">
                 <!-- Video files -->
                 <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-               <!--  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
                 <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
                 <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
- -->
+
                 <!-- Caption files -->
                 <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
                     default>
@@ -64,7 +64,18 @@
                 <!-- Fallback for browsers that don't support the <video> element -->
                 <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
             </video>
-              {{/each}}
+  
+  <div class="actions">
+    <button type="button" class="btn js-play">Play</button>
+    <button type="button" class="btn js-pause">Pause</button>
+    <button type="button" class="btn js-stop">Stop</button>
+    <button type="button" class="btn js-rewind">Rewind</button>
+    <button type="button" class="btn js-forward">Forward</button>
+  </div>
+  <!-- {{/each}}
+  {{else}} -->
+    <img src="http://viewvc.svn.mozilla.org/vc/addons/trunk/bandwagon/skin/images/spinner.gif?revision=18591&view=co&pathrev=18591">
+  <!-- {{/if}} -->
 
 </div>
 </template>
