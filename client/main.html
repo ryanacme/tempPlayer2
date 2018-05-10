@@ -47,35 +47,19 @@
 
 <template name="player">
 <div class="containerPlayer" id="script_div">
-  <!-- {{#if tasksLoaded}}
-{{#each sounds}}   -->
+  <!-- {{#if tasksLoaded}} -->
+<!-- {{#if sounds}}   -->
+<!-- {{#each sounds}}   -->
 <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="player">
-                <!-- Video files -->
-                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
-                <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
+  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+</video>
 
-                <!-- Caption files -->
-                <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
-                    default>
-                <track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
-
-                <!-- Fallback for browsers that don't support the <video> element -->
-                <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-            </video>
-  
-  <div class="actions">
-    <button type="button" class="btn js-play">Play</button>
-    <button type="button" class="btn js-pause">Pause</button>
-    <button type="button" class="btn js-stop">Stop</button>
-    <button type="button" class="btn js-rewind">Rewind</button>
-    <button type="button" class="btn js-forward">Forward</button>
-  </div>
-  <!-- {{/each}}
-  {{else}} -->
-    <img src="http://viewvc.svn.mozilla.org/vc/addons/trunk/bandwagon/skin/images/spinner.gif?revision=18591&view=co&pathrev=18591">
-  <!-- {{/if}} -->
+<video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="player">
+  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+</video>
+<!-- {{/each}} -->
+<!--     <img src="http://viewvc.svn.mozilla.org/vc/addons/trunk/bandwagon/skin/images/spinner.gif?revision=18591&view=co&pathrev=18591">
+ -->  <!-- {{/if}} -->
 
 </div>
 </template>

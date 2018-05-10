@@ -36,45 +36,50 @@ Template.hello.events({
 // });
 
 Template.player.helpers({
-  sounds: function(){
-    return Sounds.find({});
-  },
+  sounds: function(){ 
+      var obj = Sounds.find().fetch();
+      console.log(obj);
+      if (obj.length>0){
+        console.log("hiiiiii");
+        // return obj;
+      }
+      else{
+      console.log("000000000");
+      // return [1];
+      }
+      return [1,2];
+  }, //sounds
 
-  tasksLoaded: function () {
-    return Session.get('tasksLoaded');
-  },
+  // tasksLoaded: function () {
+  //   return Session.get('tasksLoaded');
+  // },
 });
 
-// Meteor.subscribe("sounds");
+Meteor.subscribe("sounds");
 
-Meteor.subscribe('sounds', function onReady() {
-  Session.set('tasksLoaded', true);
-});
+// Meteor.subscribe('sounds', function onReady() {
+//   Session.set('tasksLoaded', true);
+// });
 
 // Template.player.onRendered(function() {
 //   const player = new Plyr('#player');
 
 // });
 
-Template.player.onRendered(function() {
-      $(document).ready(function() {
-        var script = document.createElement("script");
-        script.type="text/javascript";
-        script.src = "https://cdn.plyr.io/3.3.7/plyr.js";
-        $("#script_div").append(script);
-      });
-      // const player = new Plyr('#player');
-});
+// Template.player.onRendered(function() {
+//       $(document).ready(function() {
+//         var script = document.createElement("script");
+//         script.type="text/javascript";
+//         script.src = "https://cdn.plyr.io/3.3.7/plyr.js";
+//         $("#script_div").append(script);
+//       });
+//       // const player = new Plyr('#player');
+// });
 
 Template.player.onRendered(function() {
    $.getScript("https://cdn.plyr.io/3.3.7/plyr.js");
-   const player = new Plyr('#player');
+   // const player = new Plyr('#player');
 });
-
-// Template.player.onRendered(function() {
-//    $.getScript("https://cdn.plyr.io/3.3.6/plyr.js");
-// });
-
 
 
 document.addEventListener('DOMContentLoaded', () => { 
